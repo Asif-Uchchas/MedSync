@@ -1,5 +1,8 @@
+
 import Image from 'next/image';
 import React from 'react';
+
+
 
 const Main = () => {
   return (
@@ -26,6 +29,7 @@ const Main = () => {
             </div>
             <div className="md:w-1/2 mt-8 md:mt-0">
               <div className="relative">
+
                 <Image
                   src="/meds.gif"
                   alt="Medicine Hero Image"

@@ -6,22 +6,20 @@ import MedScheduleMain from "./MedScheduleMain";
 
 const Hero = () => {
   return (
-    <section
+    <main
       className="hero py-20"
       style={{ background: "linear-gradient(to right, #A6D71C, #2E6A47)" }}
     >
       <div className="flex flex-col">
         <div className="hero-1 my-[150px]">
-          <Main/>
+          <Main />
         </div>
-              
-
 
         <div className="hero-2 my-[150px] ">
-                  <MedScheduleMain/>
+          <MedScheduleMain />
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 
