@@ -7,7 +7,7 @@ import MedScheduleMain from "./MedScheduleMain";
 const Hero = () => {
   return (
     <main
-      className="hero py-20"
+      className="hero h-full w-full overflow-hidden py-20"
       style={{ background: "linear-gradient(to right, #A6D71C, #2E6A47)" }}
     >
       <div className="flex flex-col">

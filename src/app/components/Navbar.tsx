@@ -1,8 +1,10 @@
-'use client'
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
+"use client";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { EnvelopeOpenIcon } from "@radix-ui/react-icons";
 
 const Navbar = () => {
   const [isSticky, setSticky] = useState(false);
@@ -16,14 +18,18 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Clean up the event listener on unmount
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <nav className={`bg-gray-900 text-white shadow-lg ${isSticky ? 'fixed top-0 left-0 w-full z-10' : ''}`}>
+    <nav
+      className={`bg-gray-900 text-white shadow-lg ${
+        isSticky ? "fixed top-0 left-0 w-full z-10" : ""
+      }`}
+    >
       <div className="container mx-auto px-6 py-3">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
           <div className="flex items-center justify-between">
@@ -58,16 +64,29 @@ const Navbar = () => {
           </div>
           <div className="hidden md:flex md:items-center md:space-x-4">
             <Link href="/">
-              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">Home</div>
+              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">
+                Home
+              </div>
             </Link>
             <Link href="/about">
-              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">About</div>
+              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">
+                About
+              </div>
             </Link>
             <Link href="/services">
-              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">Services</div>
+              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">
+                Services
+              </div>
             </Link>
             <Link href="/contact">
-              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">Contact</div>
+              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">
+                Contact
+              </div>
+            </Link>
+            <Link href="/auth/login">
+              <Button variant="secondary">
+                <EnvelopeOpenIcon className="mr-2 h-4 w-4" /> Login / Sign up
+              </Button>
             </Link>
           </div>
         </div>
@@ -75,16 +94,29 @@ const Navbar = () => {
         <div className="md:hidden">
           <div className="flex flex-col mt-4 md:hidden">
             <Link href="/">
-              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">Home</div>
+              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">
+                Home
+              </div>
             </Link>
             <Link href="/about">
-              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">About</div>
+              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">
+                About
+              </div>
             </Link>
             <Link href="/services">
-              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">Services</div>
+              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">
+                Services
+              </div>
             </Link>
             <Link href="/contact">
-              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">Contact</div>
+              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">
+                Contact
+              </div>
+            </Link>
+            <Link href="/login">
+              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">
+                Sign In/Up
+              </div>
             </Link>
           </div>
         </div>
