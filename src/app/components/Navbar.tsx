@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { EnvelopeOpenIcon } from "@radix-ui/react-icons";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+
 
 const Navbar = () => {
   const [isSticky, setSticky] = useState(false);
@@ -88,6 +90,10 @@ const Navbar = () => {
                 <EnvelopeOpenIcon className="mr-2 h-4 w-4" /> Login / Sign up
               </Button>
             </Link>
+            <Avatar>
+              <AvatarImage src="https://github.com/shadcn.png" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
           </div>
         </div>
         {/* Mobile menu */}
@@ -113,10 +119,10 @@ const Navbar = () => {
                 Contact
               </div>
             </Link>
-            <Link href="/login">
-              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">
-                Sign In/Up
-              </div>
+            <Link href="/auth/login">
+              <Button variant="secondary">
+                <EnvelopeOpenIcon className="mr-2 h-4 w-4" /> Login / Sign up
+              </Button>
             </Link>
           </div>
         </div>
