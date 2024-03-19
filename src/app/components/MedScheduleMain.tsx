@@ -13,7 +13,8 @@ const MedScheduleMain = () => {
                   src="/tablets.gif"
                   alt="Medicine Hero Image"
                   width={500}
-                  height={500}
+            height={500}
+            unoptimized
                 />    
 
                 

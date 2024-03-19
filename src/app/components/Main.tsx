@@ -35,7 +35,8 @@ const Main = () => {
                   alt="Medicine Hero Image"
                   width={500}
                   height={500}
-                  className="rounded-lg shadow-xl"
+            className="rounded-lg shadow-xl"
+            unoptimized
                 />
               </div>
             </div>
