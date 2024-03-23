@@ -96,7 +96,8 @@ export const LoginForm = () => {
               )}
             />
           </div>
-          <FormError message={error || urlError} />
+          {/* <FormError message={error || urlError} /> */}
+          <FormError message={error} />
           <FormSuccess message={success} />
           <Button disabled={isPending} type="submit" className="w-full">
             Log In
