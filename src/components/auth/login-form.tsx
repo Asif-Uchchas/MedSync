@@ -21,11 +21,11 @@ import { login } from "../../../actions/login";
 import { useSearchParams } from "next/navigation";
 
 export const LoginForm = () => {
-  const searchParams = useSearchParams();
-  const urlError =
-    searchParams.get("error") === "OAuthAccountNotLinked"
-      ? "Email already in use with different proider"
-      : "";
+  // const searchParams = useSearchParams();
+  // const urlError =
+  //   searchParams.get("error") === "OAuthAccountNotLinked"
+  //     ? "Email already in use with different proider"
+  //     : "";
 
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
