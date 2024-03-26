@@ -5,8 +5,13 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Button } from "@/src/components/ui/button";
 import { EnvelopeOpenIcon } from "@radix-ui/react-icons";
-import { Avatar, AvatarFallback, AvatarImage } from "@/src/components/ui/avatar"
-
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/src/components/ui/avatar";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Sidebar from "./sidebar";
 
 const Navbar = () => {
   const [isSticky, setSticky] = useState(false);
@@ -48,21 +53,30 @@ const Navbar = () => {
                 MedSync
               </div>
             </Link>
-            <button className="md:hidden">
-              <svg
-                className="h-8 w-8 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              </svg>
-            </button>
+            <Sheet>
+              <SheetTrigger>
+                {/* <Menu className=' text-white'/> */}
+
+                <button className="md:hidden">
+                  <svg
+                    className="h-8 w-8 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h16m-7 6h7"
+                    />
+                  </svg>
+                </button>
+              </SheetTrigger>
+              <SheetContent className="p-0 z-[100]" side={"left"}>
+                <Sidebar className="bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#A6D71C] to-[#2E6A47]"/>
+              </SheetContent>
+            </Sheet>
           </div>
           <div className="hidden md:flex md:items-center md:space-x-4">
             <Link href="/">
@@ -94,36 +108,6 @@ const Navbar = () => {
               <AvatarImage src="https://github.com/shadcn.png" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
-          </div>
-        </div>
-        {/* Mobile menu */}
-        <div className="md:hidden">
-          <div className="flex flex-col mt-4 md:hidden">
-            <Link href="/">
-              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">
-                Home
-              </div>
-            </Link>
-            <Link href="/about">
-              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">
-                About
-              </div>
-            </Link>
-            <Link href="/services">
-              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">
-                Services
-              </div>
-            </Link>
-            <Link href="/contact">
-              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">
-                Contact
-              </div>
-            </Link>
-            <Link href="/auth/login">
-              <Button variant="secondary">
-                <EnvelopeOpenIcon className="mr-2 h-4 w-4" /> Login / Sign up
-              </Button>
-            </Link>
           </div>
         </div>
       </div>
