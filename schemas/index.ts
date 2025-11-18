@@ -16,3 +16,15 @@ export const RegisterSchema = z.object({
         message: "Minimum 6 characters"
     })
 })
+
+export const MedicationSchema = z.object({
+    name: z.string().min(1, {
+        message: "Name is required"
+    }),
+    dosage: z.string().min(1, {
+        message: "Dosage is required"
+    }),
+    time: z.string().min(1, {
+        message: "Time is required"
+    })
+})

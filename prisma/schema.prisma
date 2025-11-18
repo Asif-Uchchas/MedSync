@@ -29,6 +29,7 @@ model User {
   password      String?
   role          UserRole  @default(USER)
   accounts      Account[]
+  medications   Medication[]
 }
 
 model Account {
@@ -48,4 +49,13 @@ model Account {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
+}
+
+model Medication {
+  id      String @id @default(cuid())
+  name    String
+  dosage  String
+  time    String
+  userId  String
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

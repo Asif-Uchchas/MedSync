@@ -99,6 +99,11 @@ const Navbar = () => {
                 Contact
               </div>
             </Link>
+            <Link href="/medication-reminder">
+              <div className="nav-link text-white hover:text-gray-300 cursor-pointer">
+                Medication Reminder
+              </div>
+            </Link>
             <Link href="/auth/login">
               <Button variant="secondary">
                 <EnvelopeOpenIcon className="mr-2 h-4 w-4" /> Login / Sign up
